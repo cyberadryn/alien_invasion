@@ -1,1 +1,3 @@
-# alien_invasion
+# Alien Invasion
+
+In Alien Invasion, the player controls a rocketship tha appears at the bottom center of the screen. The player can move the ship right and left using the arrow keys and shoot builders using the spacebar. When the game begins, a fleet of aliens fills the sky destroys the aliens. If the player destorys all the aliens, a new fleet appears that move faster than the previous fleet. If any alien hits the player's ship or reaches the bottom of the screen, the player loses a ship. If the player loses three ships, the game ends. 
