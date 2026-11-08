@@ -17,7 +17,7 @@ class Sounds:
             pygame.mixer.music.set_volume(0.3)
 
             # Laser sound effect.
-            self.laser_sound = pygame.mixer.Sound("sounds/laser.wav")
+            self.laser_sound = pygame.mixer.Sound("sounds/laser.mp3")
             self.laser_sound.set_volume(0.5)
 
         else:
