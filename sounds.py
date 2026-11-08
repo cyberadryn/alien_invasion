@@ -1,40 +1,39 @@
+
 import pygame
 
 
 class Sounds:
-    """Manage music for Alien Invasion."""
+    """Manage music and sound effects for Alien Invasion."""
 
     def __init__(self):
-        self.audio_enabled = True
+        """Load game audio."""
 
-        try:
-            # Explicitly try to initialize the mixer
-            pygame.mixer.init()
-
-            # Double-check that it successfully initialized
-            if pygame.mixer.get_init() is None:
-                self.audio_enabled = False
-        except Exception:
-            self.audio_enabled = False
+        # Check if the audio mixer is available.
+        self.audio_enabled = pygame.mixer.get_init() is not None
 
         if self.audio_enabled:
-            try:
-                pygame.mixer.music.load("sounds/alien_invader_music.mp3")
-                pygame.mixer.music.set_volume(0.3)
-            except pygame.error as e:
-                print(f"Could not load music file: {e}")
-                self.audio_enabled = False
+            # Background music.
+            pygame.mixer.music.load("sounds/alien_invader_music.mp3")
+            pygame.mixer.music.set_volume(0.3)
+
+            # Laser sound effect.
+            self.laser_sound = pygame.mixer.Sound("sounds/laser.wav")
+            self.laser_sound.set_volume(0.5)
+
         else:
-            print(
-                "Warning: Audio device not found. Running game in silent mode."
-            )
+            print("Audio unavailable. Running without sound.")
 
     def play_music(self):
-        """Play background music continuously if audio is enabled."""
+        """Play background music."""
         if self.audio_enabled:
             pygame.mixer.music.play(-1)
 
     def stop_music(self):
-        """Stop the background music if audio is enabled."""
+        """Stop background music."""
         if self.audio_enabled:
             pygame.mixer.music.stop()
+
+    def play_laser(self):
+        """Play laser sound."""
+        if self.audio_enabled:
+            self.laser_sound.play()
