@@ -3,10 +3,12 @@ import sys
 import pygame
 
 from settings import Settings
+from sounds import Sounds
 from game_stats import GameStats
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+
 
 # """
 # In Alien Invasion, the player controls a rocketship tha appears at the bottom center of the screen. The player can move the ship right
@@ -24,7 +26,12 @@ class AlienInvasion:
 
         # Initializes Pygame's modules so they're ready to use.
         pygame.init()
+        print("Audio initialized:", pygame.mixer.get_init())
         self.clock = pygame.time.Clock()
+
+        # NEW: Initialize and play background music.
+        self.sounds = Sounds()
+        self.sounds.play_music()
 
         # Set dimension of the PyGame Window
         self.settings = Settings()

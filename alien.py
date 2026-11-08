@@ -5,7 +5,7 @@ class Alien(Sprite):
     """A class to represent a single alien in the fleet."""
 
     def __init__(self, ai_game):
-        """Initialize the alient and set its starting postion."""
+        """Initialize the alien and set its starting postion."""
         super().__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
