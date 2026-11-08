@@ -13,10 +13,10 @@ class Ship:
 
 
         # Load the ship image and get its rect.
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/shipv3.bmp')
 
         # Resize the image.
-        self.image = pygame.transform.scale(self.image, (50, 50))
+        self.image = pygame.transform.scale(self.image, (80, 80))
         self.rect = self.image.get_rect()
 
         # Start each enew ship a the bottom center of the screen.
